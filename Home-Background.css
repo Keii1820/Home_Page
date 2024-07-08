@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(270deg, #ff758c, #ff7eb3, #ff91e3, #a6a1ff, #78e0ff, #00c5ff, #3bffa6, #8aff7e);
+    background-size: 2000% 2000%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+

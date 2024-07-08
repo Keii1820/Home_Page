@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my Website</title>
+    <link rel="stylesheet" href="Home-Background.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh; /* Ensure the full height of the viewport */
+            position: relative; /* Allow positioning of the label */
+        }
+
+        .sidebar-container {
+            display: flex;
+            align-items: center; /* Center the sidebar vertically */
+            justify-content: flex-start; /* Align to the left */
+            width: 200px; /* Adjust width as needed */
+            position: fixed; /* Keep the sidebar fixed */
+            height: 100%; /* Full height of the viewport */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            transform: translateX(-100%); /* Initially hide the sidebar */
+            transition: transform 0.3s ease; /* Smooth transition for showing/hiding */
+        }
+
+        .sidebar {
+            background-color: transparent;
+            padding: 10px;
+            width: 100%; /* Full width of the sidebar container */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .sidebar a:hover {
+            text-decoration: none;
+            font-size: 30px; /* Enlarge the text on hover */
+            color: white; /* Light up with a different color */
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            margin-left: 0; /* Adjust margin to leave space for the sidebar */
+            transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .top-right-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        /* Toggle button styles */
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.8); /* Enlarge the button on hover */
+        }
+
+        .toggle-btn div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover div {
+            background-color: white;
+        }
+
+        /* Close button styles */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            font-size: 24px;
+            font-weight: bold;
+            transition: font-size 0.3s ease; /* Smooth transition for font size */
+        }
+
+        .close-btn:hover {
+            color: white;
+            font-size: 40px; /* Enlarge the font size on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: font-size 0.3s ease; /* Smooth transition for font size */
+        }
+
+        footer a:hover {
+            color: fuchsia;
+            font-size: 40px; /* Enlarge the font size on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar-container {
+                width: 100%;
+                height: auto;
+                position: static;
+                align-items: flex-start;
+                transform: translateX(0); /* Show sidebar on small screens by default */
+            }
+            .sidebar {
+                width: 100%;
+                text-align: center;
+            }
+            .content-container {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .top-right-label {
+                top: auto;
+                right: auto;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <div class="sidebar-container" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+        <div class="sidebar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-container" id="content">
+        <div class="content">
+            <h1>Full Stack Developer</h1>
+            <p>I am a passionate Full Stack Developer with expertise in both frontend and backend technologies. <br> 
+                I enjoy creating beautiful and functional web applications that solve real-world problems.<br>
+                I have worked with various technologies including HTML, CSS, JavaScript, PHP, and SQL. <br> 
+                I am constantly learning and keeping up with the latest trends in web development.</p>
+        </div>
+    </div>
+    <footer>
+        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </footer>
+    <div class="top-right-label" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: x-large;">Keiara Naidu</div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            if (sidebar.style.transform === 'translateX(0px)') {
+                sidebar.style.transform = 'translateX(-100%)';
+                content.style.marginLeft = '0';
+            } else {
+                sidebar.style.transform = 'translateX(0px)';
+                content.style.marginLeft = '200px';
+            }
+        }
+    </script>
+</body>
+</html>
