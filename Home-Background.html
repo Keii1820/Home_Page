@@ -3,240 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="Home-Background.css">
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    
     <style>
-        body {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            min-height: 100vh; /* Ensure the full height of the viewport */
-            position: relative; /* Allow positioning of the label */
+        /* Add some styles for the hamburger menu */
+
+        
+
+        .hamburger:hover {
+            transform: scale(1.2);
+            transition: transform 0.2s;
+            color: black;
         }
 
-        .sidebar-container {
-            display: flex;
-            align-items: center; /* Center the sidebar vertically */
-            justify-content: flex-start; /* Align to the left */
-            width: 200px; /* Adjust width as needed */
-            position: fixed; /* Keep the sidebar fixed */
-            height: 100%; /* Full height of the viewport */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            transform: translateX(-100%); /* Initially hide the sidebar */
-            transition: transform 0.3s ease; /* Smooth transition for showing/hiding */
+        .hamburger:hover span {
+            transform: rotate(360deg);
+            transition: transform 0.2s;
+            color: black;
         }
 
-        .sidebar {
+        .hamburger span {
+            transition: transform 0.2s;
+            color: black;
+        }
+
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 5px;
+            background-color: white;
+            margin-bottom: 5px;
+        }
+
+        .menu {
+            position: fixed;
+            top: 45px;
+            left: -300px;
+            width: 110px; /* Define a width for the sliding menu */
             background-color: transparent;
-            padding: 10px;
-            width: 100%; /* Full width of the sidebar container */
+            padding: 20px;
+            transition: left 0.5s;
         }
 
-        .sidebar ul {
-            list-style-type: none;
+        .menu ul {
+            list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .sidebar li {
-            margin-bottom: 15px;
+        .menu li {
+            margin-bottom: 10px;
         }
 
-        .sidebar a {
+        .menu a {
             color: black;
             text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
         }
 
-        .sidebar a:hover {
+        .menu.show {
+            left: 0;
+        }
+
+        .menu a:hover {
             text-decoration: none;
-            font-size: 30px; /* Enlarge the text on hover */
+            font-size: 20px; /* Enlarge the text on hover */
             color: white; /* Light up with a different color */
         }
 
-        .content-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-            margin-left: 0; /* Adjust margin to leave space for the sidebar */
-            transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .top-right-label {
+        .close-button {
             position: absolute;
             top: 10px;
-            right: 10px;
-            font-size: 18px;
-            padding: 10px;
-        }
-
-        /* Toggle button styles */
-        .toggle-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            background: none;
-            border: none;
+            right: 20px;
             cursor: pointer;
-            outline: none;
-            transition: transform 0.3s ease; /* Smooth transition for hover effects */
-        }
-
-        .toggle-btn:hover {
-            transform: scale(1.8); /* Enlarge the button on hover */
-        }
-
-        .toggle-btn div {
-            width: 25px;
-            height: 3px;
-            background-color: black;
-            margin: 5px 0;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .toggle-btn:hover div {
-            background-color: white;
-        }
-
-        /* Close button styles */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
             font-size: 24px;
-            font-weight: bold;
-            transition: font-size 0.3s ease; /* Smooth transition for font size */
+            color: #fff;
         }
 
-        .close-btn:hover {
+        .close-button:hover {
             color: white;
             font-size: 40px; /* Enlarge the font size on hover */
         }
 
-        /* Footer styles */
-        footer {
+        .footer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #f2f2f2;
-            padding: 10px 0;
+            background-color: white;
+            padding: 10px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 1; /* Add this to ensure the footer is always on top */
         }
 
-        footer a {
+        .footer a {
             color: black;
             text-decoration: none;
-            font-size: 24px;
             margin: 0 10px;
-            transition: font-size 0.3s ease; /* Smooth transition for font size */
+            transition: transform 0.2s; /* add transition effect */
         }
 
-        footer a:hover {
+        .footer a:hover {
+            transform: scale(1.8); /* enlarge icons on hover */
             color: fuchsia;
-            font-size: 40px; /* Enlarge the font size on hover */
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .sidebar-container {
-                width: 100%;
-                height: auto;
-                position: static;
-                align-items: flex-start;
-                transform: translateX(0); /* Show sidebar on small screens by default */
-            }
-            .sidebar {
-                width: 100%;
-                text-align: center;
-            }
-            .content-container {
-                margin-left: 0;
-                padding: 20px;
-            }
-            .top-right-label {
-                top: auto;
-                right: auto;
-                bottom: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        .footer i {
+            font-size: 30px; /* set icon size */
+            display: inline-block; /* Add this to center the icons horizontally */
         }
 
         h1 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
         }
 
         p {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        /* Button with light flowing around it */
+        .light-button {
+            position: fixed;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .light-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(248, 249, 249, 0.6), transparent);
+            animation: light-flow 5s infinite;
+        }
+
+        .light-button:hover {
+            color: white;
+            background-color: transparent;
+        }
+
+        @keyframes light-flow {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+        
     </style>
 </head>
 <body>
-    <button class="toggle-btn" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-    <div class="sidebar-container" id="sidebar">
-        <button class="close-btn" onclick="toggleSidebar()">×</button>
-        <div class="sidebar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">My Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <div class="main">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu" id="menu-container">
+            <ul id="menu">
+                <li><a data="1" href="#1">Home</a></li>
+                <li><a data="2" href="#2">About Me</a></li>
+                <li><a data="3" href="#3">My Projects</a></li>
+                <li><a data="4" href="#4">Contact</a></li>
             </ul>
+            <div class="close-button" id="close-button">&times;</div>
+        </div>
+
+        <div class="container">
+            <div class="section" id="1">
+                <p>
+                    <h1>Full Stack Developer</h1>
+                    An aspiring Full Stack Developer with a knack for turning ideas into high-quality, 
+                    scalable software solutions. <br> With a strong foundation 
+                    in both front-end and back-end technologies, 
+                    <br> I bring a holistic approach to web development.
+                </p>
+            </div>
+            <div class="section" id="2">
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    Greetings! I am determined individual who embarked on a journey 
+                    into the <br> dynamic world of technology driven by a passion for innovation and problem-solving.
+                    <br> My academic pursuit led me to enroll at Richfield Graduate Institute of Technology 
+                    in 2023, <br>where I am currently pursuing a degree in Information Technology with a 
+                    specialization in Software Development.<br><br> Throughout my educational journey, I have
+                    encountered challenges that <br> tested my perseverance and commitment, but I remained 
+                    steadfast in pursuing my aspirations. <br>
+                    
+                    I discovered a profound interest in software development along this path, recognizing <br> it's 
+                    profound potential for driving innovation. <br><br> This fascination has fueled my dedication to 
+                    mastering programming languages, software architecture, <br> 
+                    and the intricacies of application development. <br>
+                    
+                    I am eager to leverage my academic foundation, 
+                    coupled with hands-on experience <br> gained through projects and coursework, to contribute 
+                    meaningfully to the ever-evolving tech landscape. <br> As I continue to expand my skills and 
+                    knowledge, I am excited about the opportunities to <br> collaborate, innovate, and make a positive
+                     impact in the realm of technology. <br><br>
+                    
+                    Explore my journey and insights, and let's connect to explore how we can drive <br>
+                    forward together in the realm of technology and innovation. 
+                </p>
+            </div>
+            <div class="section" id="3">
+
+                <h2 class="title">Hover over the cards</h2>
+
+<div id="app" class="container">
+  <card data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+    <h4 slot="header">Canyons</h4>
+    <p slot="content">Project loading, comming soon ...</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h4 slot="header">Beaches</h4>
+    <p slot="content">Project loading, comming soon ...</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h4 slot="header">Trees</h4>
+    <p slot="content">Project loading, comming soon ...</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+    <h4 slot="header">Lakes</h4>
+    <p slot="content">Project loading, comming soon ...</p>
+  </card>
+</div>
+
+            </div>
+            <div class="section" id="4">
+
+                <form action="" class="contacts-form">
+                    <!-- first row -->
+                    <div class="form-row">
+                      <div class="form-group">
+                        <input type="text" class="input" placeholder=" " />
+                        <label for="" class="label"> Name </label>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="input" placeholder=" " />
+                        <label for="" class="label"> Lastname </label>
+                      </div>
+                    </div>
+          
+                    <!-- first row / -->
+                    <!-- second row -->
+                    <div class="form-row">
+                      <div class="form-group">
+                        <input type="email" class="input" placeholder=" " />
+                        <label for="" class="label"> Email </label>
+                      </div>
+                      <div class="form-group">
+                        <input type="tel" class="input" placeholder=" " />
+                        <label for="" class="label"> Phone </label>
+                      </div>
+                    </div>
+                    <!-- second row/ -->
+          
+                    <!-- message -->
+                    <div class="form-row">
+                      <div class="form-group">
+                        <textarea class="textarea" placeholder=" " name=""></textarea>
+                        <label for="" class="label">Message</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn">Send</button>
+                    <!-- message / -->
+                  </form>
+
+
+            </div>
         </div>
     </div>
-    <div class="content-container" id="content">
-        <div class="content">
-            <h1>Full Stack Developer</h1>
-            <p>I am a passionate Full Stack Developer with expertise in both frontend and backend technologies. <br> 
-                I enjoy creating beautiful and functional web applications that solve real-world problems.<br>
-                I have worked with various technologies including HTML, CSS, JavaScript, PHP, and SQL. <br> 
-                I am constantly learning and keeping up with the latest trends in web development.</p>
-        </div>
-    </div>
+
+    <button class="light-button">Keiara Naidu</button>
+
     <footer>
-        <a href="https://www.linkedin.com/in/keiara-naidu-8a0067295" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Keii1820" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/empress_of_annihilation/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <div class="footer">
+            <a href="https://www.linkedin.com/in/keiara-naidu-8a0067295" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Keii1820" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/+27726828944" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
-    <div class="top-right-label" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: x-large;">Keiara Naidu</div>
+
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const content = document.getElementById('content');
-            if (sidebar.style.transform === 'translateX(0px)') {
-                sidebar.style.transform = 'translateX(-100%)';
-                content.style.marginLeft = '0';
-            } else {
-                sidebar.style.transform = 'translateX(0px)';
-                content.style.marginLeft = '200px';
-            }
+        // Add event listener to the hamburger icon
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('menu-container').classList.toggle('show');
+        });
+
+        // Add event listener to the close button
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('menu-container').classList.remove('show');
+        });
+
+        // Add event listeners to each menu link
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menu-container').classList.remove('show');
+            });
+        });
+
+        function animate(options) {
+            var start = performance.now();
+
+            requestAnimationFrame(function animate(time) {
+                // timeFraction from 0 to 1
+                var timeFraction = (time - start) / options.duration;
+                if (timeFraction > 1) timeFraction = 1;
+
+                // current state of the animation
+                var progress = options.timing(timeFraction);
+
+                options.draw(progress);
+
+                if (timeFraction < 1) {
+                    requestAnimationFrame(animate);
+                }
+
+            });
         }
+
+        function mainNavigation(linksmenu, sections) {
+    var menu = document.getElementById(linksmenu);
+    menu.addEventListener("click", function(e) {
+        e.preventDefault();
+        var target = e.target;
+        var idAttr = target.getAttribute('data');
+        var element = document.getElementById(idAttr);
+        var scroll = element.offsetTop;
+        var startScroll = window.pageYOffset;
+
+        if (startScroll < scroll) {
+            function scrollTopTiming() {
+                animate({
+                    duration: 3000,  // Increase duration to slow down scrolling
+                    timing: function cubic(progress) {  // Change easing function to cubic
+                        return Math.pow(progress, 3)
+                    },
+                    draw: function(progress) {
+                        window.scrollTo(0, startScroll);
+                        startScroll = startScroll + (progress * (scroll - startScroll));
+                    }
+                });
+            }
+            scrollTopTiming();
+        } else {
+            function scrollDownTiming() {
+                animate({
+                    duration: 3000,  // Increase duration to slow down scrolling
+                    timing: function cubic(progress) {  // Change easing function to cubic
+                        return Math.pow(progress, 3)
+                    },
+                    draw: function(progress) {
+                        window.scrollTo(0, startScroll);
+                        startScroll = startScroll - (progress * (startScroll - scroll));
+                    }
+                });
+            }
+            scrollDownTiming();
+        }
+    });
+
+    var sectionOffset = [].slice.call(document.getElementsByClassName(sections));
+    sectionOffset[0].classList.add('active', 'load');
+
+    var menuChildren = menu.getElementsByTagName('a');
+
+    menuChildren[0].classList.add('active');
+
+    window.onscroll = function() {
+        var elements = [];
+
+        sectionOffset.forEach(function (el) {
+            if((el.getBoundingClientRect().top + (el.clientHeight/2)) > 0 ) {
+                elements.push(el);
+            }
+        });
+        var activeEl = elements[0];
+        if (!activeEl.classList.contains('active')) {
+            sectionOffset.forEach(function (el) {
+                el.classList.remove('active');
+            });
+
+            activeEl.classList.add('active', 'load');
+            activeLink();
+        }
+
+        function activeLink() {
+            var idAttr = activeEl.getAttribute('id');
+
+            for(var i = 0; i < menuChildren.length; i++) {
+                menuChildren[i].classList.remove('active');
+            }
+
+            var links = document.querySelector('a[data="' + idAttr +'"]');
+            links.classList.add('active');
+        }
+    };
+}
+
+mainNavigation("menu", "section");
     </script>
 </body>
 </html>

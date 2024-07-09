@@ -1,5 +1,62 @@
 body {
     margin: 0;
+}
+.main {
+    display: flex;
+}
+.menu {
+    padding: 0 30px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.menu ul {
+    list-style: none;
+}
+a {
+    color: black;
+    text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  transition: all 0.5s;
+}
+a.active {
+text-decoration: underline;
+}
+.active {
+    color: white;
+  
+}
+.container {
+    margin-left: 150px;
+}
+.container div {
+    margin-bottom: 50px;
+}
+.section p {
+    transition: all 0.5s;
+    padding: 30px 0 0;
+    opacity: 0;
+}
+.section:last-child {
+    min-height: 100vh;
+}
+
+.section.load p {
+    animation: section 0.5s;
+    opacity: 1;
+}
+@keyframes section {
+    from {
+        transform: translateY(200px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+body {
+    margin: 0;
     height: 100vh;
     background: linear-gradient(270deg, #ff758c, #ff7eb3, #ff91e3, #a6a1ff, #78e0ff, #00c5ff, #3bffa6, #8aff7e);
     background-size: 2000% 2000%;
@@ -17,4 +74,118 @@ body {
         background-position: 0% 50%;
     }
 }
+
+/*Contact form CSS*/
+body {
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  section{
+    width: 1000px;
+  }
+  .btn {
+    min-width: 200px;
+    height: 50px;
+    padding: 0 15px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #db2512;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    border-radius: 5%;
+    text-transform: uppercase;
+  }
+  .block-title.text-white {
+    color: #fff;
+  }
+  .place {
+    height: 200px;
+    width: 998px;
+    border: 2px dotted #000;
+    margin-bottom: 20px;
+  }
+  .container {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .contacts {
+    padding: 70px 0;
+    background-color: #171616;
+    /* background-color: aqua; */
+  }
+  .contacts .block-title {
+    margin-bottom: 40px;
+  }
+  .contacts-form {
+    max-width: 440px;
+  }
+  .form-row {
+    margin: 0 -20px;
+    display: flex;
+  }
+  .form-group {
+    padding: 0 20px;
+    flex: 1;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .input {
+    width: 100%;
+    padding: 9px 0;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 15px;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+  }
+  .input:focus + .label {
+    transform: translateY(-20px);
+  }
+  .input:not(:placeholder-shown) + .label {
+    transform: translateY(-20px);
+    font-size: 12px;
+  }
+  .label {
+    letter-spacing: 0.15em;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  .textarea {
+    min-width: 130px;
+    min-height: 130px;
+    width: 100%;
+    padding: 9px 0;
+    resize: vertical;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    border-bottom: 1px solid #fff;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+  .textarea:focus + .label {
+    transform: translateY(-20px);
+  }
+  .textarea:not(:placeholder-shown) + .label {
+    transform: translateY(-20px);
+    font-size: 12px;
+  }
+  
+
 
