@@ -95,11 +95,12 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: white;
-            padding: 10px;
+            background-color: lightgray;
+            padding: -5px 2px;
             text-align: center;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center;
             z-index: 1; /* Add this to ensure the footer is always on top */
         }
 
@@ -116,18 +117,28 @@
         }
 
         .footer i {
-            font-size: 30px; /* set icon size */
+            font-size: 22px; /* set icon size */
             display: inline-block; /* Add this to center the icons horizontally */
+        }
+
+        .footer p {
+            font-size: 15px; /* set paragraph size smaller */
         }
 
         h1 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: black;
+            font-size: 3em; /* Increase the font size */
         }
 
         p {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2em; /* Increase the font size */
         }
+
+        .highlighted-paragraph {
+            font-size: 1.8em; /* Larger font size */
+}
 
         /* Button with light flowing around it */
         .light-button {
@@ -194,8 +205,8 @@
 
         <div class="container">
             <div class="section" id="1">
-                <p>
-                    <h1>Full Stack Developer</h1>
+                    <h1><i>Full Stack Developer</i></h1>
+                    <p class="highlighted-paragraph">
                     An aspiring Full Stack Developer with a knack for turning ideas into high-quality, 
                     scalable software solutions. <br> With a strong foundation 
                     in both front-end and back-end technologies, 
@@ -203,8 +214,8 @@
                 </p>
             </div>
             <div class="section" id="2">
-                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-                    Greetings! I am determined individual who embarked on a journey 
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><i>
+                    Greetings! I am a determined individual who embarked on a journey 
                     into the <br> dynamic world of technology driven by a passion for innovation and problem-solving.
                     <br> My academic pursuit led me to enroll at Richfield Graduate Institute of Technology 
                     in 2023, <br>where I am currently pursuing a degree in Information Technology with a 
@@ -224,7 +235,7 @@
                      impact in the realm of technology. <br><br>
                     
                     Explore my journey and insights, and let's connect to explore how we can drive <br>
-                    forward together in the realm of technology and innovation. 
+                    forward together in the realm of technology and innovation. </i>
                 </p>
             </div>
             <div class="section" id="3">
@@ -232,21 +243,21 @@
                 <h2 class="title">Projects</h2>
 
                 <div id="app" class="container">
-                  <card data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
-                    <h1 slot="header"></h1>
-                    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <card data-image="https://media.istockphoto.com/id/1467976868/photo/the-convenience-of-shopping-online.webp?b=1&s=170667a&w=0&k=20&c=lAmij1MEFu7mxaexsA_Sa3EkkOjY5MBE4zFhmJd_JcA=" project-url="store.html">
+                    <h1 slot="header">Online Store</h1>
+                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
                   </card>
-                  <card data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
-                    <h1 slot="header">Beaches</h1>
-                    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <card data-image="https://media.istockphoto.com/id/1790124022/photo/anonymous-woman-writing-in-the-notebook-and-having-a-cup-of-coffee.jpg?s=612x612&w=0&k=20&c=vAy1WNfisGlj-BXrO7DrVUAOXXMS2zSsJT21lq8QGKA=" project-url="To_Do_List.html">
+                    <h1 slot="header">To Do List</h1>
+                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
                   </card>
-                  <card data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
-                    <h1 slot="header">Trees</h1>
-                    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <card data-image="https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=" project-url="weather.html">
+                    <h1 slot="header">Weather App</h1>
+                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
                   </card>
-                  <card data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
-                    <h1 slot="header">Lakes</h1>
-                    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <card data-image="https://media.istockphoto.com/id/618457124/photo/butter-chicken-served-with-homemade-indian-naan-bread.jpg?s=612x612&w=0&k=20&c=7FoiHoDtocfPvQIaRFfFani4e5lkfMTNl_619rTTh4g=" project-url="curry.html">
+                    <h1 slot="header">Naidu's Curry Cuisine</h1>
+                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
                   </card>
                 </div>
 
@@ -256,40 +267,37 @@
                 <form action="" class="contacts-form">
                     <!-- first row -->
                     <div class="form-row">
-                      <div class="form-group">
-                        <input type="text" class="input" placeholder=" " />
-                        <label for="" class="label"> Name </label>
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="input" placeholder=" " />
-                        <label for="" class="label"> Lastname </label>
-                      </div>
+                        <div class="form-group">
+                            <input type="text" class="input" id="firstName" placeholder=" " required />
+                            <label for="firstName" class="label">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="input" id="lastName" placeholder=" " required />
+                            <label for="lastName" class="label">Last Name</label>
+                        </div>
                     </div>
-          
-                    <!-- first row / -->
+                
                     <!-- second row -->
                     <div class="form-row">
-                      <div class="form-group">
-                        <input type="email" class="input" placeholder=" " />
-                        <label for="" class="label"> Email </label>
-                      </div>
-                      <div class="form-group">
-                        <input type="tel" class="input" placeholder=" " />
-                        <label for="" class="label"> Phone </label>
-                      </div>
+                        <div class="form-group">
+                            <input type="email" class="input" id="email" placeholder=" " required />
+                            <label for="email" class="label">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="input" id="phone" placeholder=" " required />
+                            <label for="phone" class="label">Phone</label>
+                        </div>
                     </div>
-                    <!-- second row/ -->
-          
                     <!-- message -->
                     <div class="form-row">
-                      <div class="form-group">
-                        <textarea class="textarea" placeholder=" " name=""></textarea>
-                        <label for="" class="label">Message</label>
-                      </div>
+                        <div class="form-group">
+                            <textarea class="textarea" placeholder="Optional" name="message" required></textarea>
+                            <label for="message" class="label">Message</label>
+                        </div>
                     </div>
-                    <button type="submit" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">submit !</button>
-                    <!-- message / -->
-                  </form>
+                    <button type="submit" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Submit</button>
+                </form>
+                
 
 
             </div>
@@ -300,22 +308,28 @@
 
     <footer>
         <div class="footer">
-            <a href="https://www.linkedin.com/in/keiara-naidu-8a0067295" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Keii1820" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://wa.me/+27726828944" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <div>
+                <a href="https://www.linkedin.com/in/keiara-naidu-8a0067295" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Keii1820" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/+27726828944" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>Keiara Naidu &copy; 2023</p>
         </div>
     </footer>
+
     <script>
+  
 
 Vue.config.devtools = true;
 
 Vue.component('card', {
   template: `
-    <div class="card-wrap"
+    <a :href="projectUrl" class="card-wrap"
       @mousemove="handleMouseMove"
       @mouseenter="handleMouseEnter"
       @mouseleave="handleMouseLeave"
-      ref="card">
+      ref="card"
+      @click.prevent="redirectToProject">
       <div class="card"
         :style="cardStyle">
         <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
@@ -324,19 +338,24 @@ Vue.component('card', {
           <slot name="content"></slot>
         </div>
       </div>
-    </div>`,
+    </a>`,
+  props: {
+    dataImage: String,
+    projectUrl: String  // Add a prop for project URL
+  },
+  data() {
+    return {
+      width: 0,
+      height: 0,
+      mouseX: 0,
+      mouseY: 0,
+      mouseLeaveDelay: null
+    };
+  },
   mounted() {
     this.width = this.$refs.card.offsetWidth;
     this.height = this.$refs.card.offsetHeight;
   },
-  props: ['dataImage'],
-  data: () => ({
-    width: 0,
-    height: 0,
-    mouseX: 0,
-    mouseY: 0,
-    mouseLeaveDelay: null
-  }),
   computed: {
     mousePX() {
       return this.mouseX / this.width;
@@ -356,30 +375,35 @@ Vue.component('card', {
       const tY = this.mousePY * -40;
       return {
         transform: `translateX(${tX}px) translateY(${tY}px)`
-      }
+      };
     },
     cardBgImage() {
       return {
         backgroundImage: `url(${this.dataImage})`
-      }
+      };
     }
   },
   methods: {
     handleMouseMove(e) {
-      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width/2;
-      this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height/2;
+      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+      this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
     },
     handleMouseEnter() {
       clearTimeout(this.mouseLeaveDelay);
     },
     handleMouseLeave() {
-      this.mouseLeaveDelay = setTimeout(()=>{
+      this.mouseLeaveDelay = setTimeout(() => {
         this.mouseX = 0;
         this.mouseY = 0;
       }, 1000);
+    },
+    redirectToProject() {
+      // Redirect to the external project URL
+      window.location.href = this.projectUrl;
     }
   }
 });
+
 
 const app = new Vue({
   el: '#app'
@@ -403,13 +427,13 @@ const app = new Vue({
         });
 
         // Add event listener to the submit button
-document.querySelector('.btn').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scrolling animation
-    });
-});
+//document.querySelector('.btn').addEventListener('click', function(event) {
+    //event.preventDefault(); // Prevent the default form submission
+//    window.scrollTo({
+    //    top: 0,
+ //       behavior: 'smooth' // Smooth scrolling animation
+  //  });
+//});
 
         function animate(options) {
             var start = performance.now();
@@ -458,7 +482,7 @@ document.querySelector('.btn').addEventListener('click', function(event) {
         } else {
             function scrollDownTiming() {
                 animate({
-                    duration: 3000,  // Increase duration to slow down scrolling
+                    duration: 2000,  // Increase duration to slow down scrolling
                     timing: function cubic(progress) {  // Change easing function to cubic
                         return Math.pow(progress, 3)
                     },
@@ -511,6 +535,7 @@ document.querySelector('.btn').addEventListener('click', function(event) {
 }
 
 mainNavigation("menu", "section");
+
     </script>
 </body>
 </html>

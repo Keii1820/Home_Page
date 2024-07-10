@@ -123,4 +123,8 @@ h1 + p, p + p {
   font-size: 36px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}
+
+.card:hover h1 {
+  color: white;
 }/*# sourceMappingURL=Projects.css.map */
