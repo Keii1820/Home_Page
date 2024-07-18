@@ -1,1 +1,250 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="store.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style>
+        /* Smooth scrolling for modern browsers */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styles for the cart display */
+        .cart-container {
+            display: none;
+            position: fixed;
+            top: 10%;
+            right: 10%;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .cart-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-total {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo">
+                <h1 class="logo">Brio & Co</h1>
+            </div>
+            <nav class="header-navigation">
+                <a href="#Men">Mens Clothing</a>
+                <a href="#Women">Womens Clothing</a>
+                <a href="#Jewelry">Jewelry & Accessories</a>
+                <a href="Home-Background.html">Portfolio</a>
+                <a href="#" class="link-button" id="cart-button">Your Cart<i class="material-icons-outlined">shopping_cart</i></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="responsive-container">
+            <div id="Men" class="grid">
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/cosmonaut.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Cosmonaut</h2>
+                                <p class="product-price">$10</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="Women" class="grid">
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/hand-drawn-monster-milkshake.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Monster Milkshake</h2>
+                                <p class="product-price">$9</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="Jewelry" class="grid">
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/pink-pastel-juicy-banana.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Juicy Banana</h2>
+                                <p class="product-price">$9</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/palmistry.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Palmistry</h2>
+                                <p class="product-price">$9</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image"> 
+                            <img src="https://assets.codepen.io/285131/fish-gas-mark.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Fish With Gas Mask</h2>
+                                <p class="product-price">$12</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/mysterious-gangster-character-style.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Gangster</h2>
+                                <p class="product-price">$5</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/adventure.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Adventure in a Bottle</h2>
+                                <p class="product-price">$15</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-column">
+                    <a class="product" href="#">
+                        <div class="product-image">
+                            <img src="https://assets.codepen.io/285131/illustration-hand-with-cigarette-icon.jpg" />
+                        </div>
+                        <div class="product-content">
+                            <div class="product-info">
+                                <h2 class="product-title">Smoking Ain't Cool</h2>
+                                <p class="product-price">$5</p>
+                            </div>
+                            <button class="product-action add-to-cart">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="cart-container" id="cart-container">
+        <div class="cart-header">Your Cart</div>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-total" id="cart-total"></div>
+    </div>
+    <script>
+        let cart = [];
+        const cartButton = document.getElementById('cart-button');
+        const cartContainer = document.getElementById('cart-container');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.closest('.product');
+                const title = product.querySelector('.product-title').innerText;
+                const price = parseFloat(product.querySelector('.product-price').innerText.replace('$', ''));
+                
+                cart.push({ title, price });
+                updateCart();
+            });
+        });
+
+        cartButton.addEventListener('click', () => {
+            cartContainer.style.display = cartContainer.style.display === 'block' ? 'none' : 'block';
+        });
+
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.classList.add('cart-item');
+                li.innerHTML = `
+                    ${item.title} - $${item.price.toFixed(2)}
+                    <button class="remove-item" data-index="${index}">Remove</button>
+                `;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+
+            cartTotal.innerText = `Total: $${total.toFixed(2)}`;
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = button.getAttribute('data-index');
+                    cart.splice(index, 1);
+                    updateCart();
+                });
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

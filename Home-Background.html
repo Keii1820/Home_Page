@@ -245,19 +245,27 @@
                 <div id="app" class="container">
                   <card data-image="https://media.istockphoto.com/id/1467976868/photo/the-convenience-of-shopping-online.webp?b=1&s=170667a&w=0&k=20&c=lAmij1MEFu7mxaexsA_Sa3EkkOjY5MBE4zFhmJd_JcA=" project-url="store.html">
                     <h1 slot="header">Online Store</h1>
-                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
+                    <p slot="content">Brio & Co, your premier online destination for curated, 
+                        one-of-a-kind finds. Enjoy lightning-fast shipping 
+                        and indulge in our exceptionally crafted, high-quality products.</p>
                   </card>
                   <card data-image="https://media.istockphoto.com/id/1790124022/photo/anonymous-woman-writing-in-the-notebook-and-having-a-cup-of-coffee.jpg?s=612x612&w=0&k=20&c=vAy1WNfisGlj-BXrO7DrVUAOXXMS2zSsJT21lq8QGKA=" project-url="To_Do_List.html">
                     <h1 slot="header">To Do List</h1>
-                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
+                    <p slot="content">Streamline Your Tasks with Ease !
+                        Effortlessly manage your daily tasks
+                        and organize your to-do list with our user-friendly and intuitive app. </p>
                   </card>
                   <card data-image="https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=" project-url="weather.html">
                     <h1 slot="header">Weather App</h1>
-                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
+                    <p slot="content">Get accurate and reliable weather forecasts, current conditions,
+                         and severe weather alerts with our intuitive and easy-to-use SkyPulse. 
+                        Plan your day, or week with confidence, and stay safe in severe weather conditions.</p>
                   </card>
                   <card data-image="https://media.istockphoto.com/id/618457124/photo/butter-chicken-served-with-homemade-indian-naan-bread.jpg?s=612x612&w=0&k=20&c=7FoiHoDtocfPvQIaRFfFani4e5lkfMTNl_619rTTh4g=" project-url="curry.html">
                     <h1 slot="header">Naidu's Curry Cuisine</h1>
-                    <p slot="content">Project coming soon, stay tuned for updates ...</p>
+                    <p slot="content">Experience the authentic taste of Indian food 
+                        where traditional recipes meet fresh, locally sourced ingredients. Our cozy atmosphere and warm 
+                        hospitality will transport you to a culinary journey that feels like home.</p>
                   </card>
                 </div>
 
@@ -265,14 +273,15 @@
             <div class="section" id="4">
 
                 <form action="" class="contacts-form">
-                    <!-- first row -->
+                        <!-- first row -->
+                         <h2 align="center" style="color: maroon;">Let's Talk !</h2>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" class="input" id="firstName" placeholder=" " required />
+                            <input type="text" class="input" id="firstName" placeholder=" " required>
                             <label for="firstName" class="label">Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="input" id="lastName" placeholder=" " required />
+                            <input type="text" class="input" id="lastName" placeholder=" " required>
                             <label for="lastName" class="label">Last Name</label>
                         </div>
                     </div>
@@ -280,30 +289,27 @@
                     <!-- second row -->
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="email" class="input" id="email" placeholder=" " required />
+                            <input type="email" class="input" id="email" placeholder=" " required>
                             <label for="email" class="label">Email</label>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="input" id="phone" placeholder=" " required />
+                            <input type="tel" class="input" id="phone" placeholder=" " required>
                             <label for="phone" class="label">Phone</label>
                         </div>
                     </div>
                     <!-- message -->
+                     
                     <div class="form-row">
                         <div class="form-group">
-                            <textarea class="textarea" placeholder="Optional" name="message" required></textarea>
+                            <textarea class="textarea" placeholder="Optional" name="message"></textarea>
                             <label for="message" class="label">Message</label>
                         </div>
                     </div>
                     <button type="submit" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Submit</button>
                 </form>
-                
-
-
             </div>
         </div>
     </div>
-
     <button class="light-button">Keiara Naidu</button>
 
     <footer>
@@ -427,13 +433,13 @@ const app = new Vue({
         });
 
         // Add event listener to the submit button
-//document.querySelector('.btn').addEventListener('click', function(event) {
-    //event.preventDefault(); // Prevent the default form submission
-//    window.scrollTo({
-    //    top: 0,
- //       behavior: 'smooth' // Smooth scrolling animation
-  //  });
-//});
+document.querySelector('.btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+   window.scrollTo({
+       top: 0,
+        behavior: 'smooth' // Smooth scrolling animation
+    });
+});
 
         function animate(options) {
             var start = performance.now();
@@ -533,9 +539,7 @@ const app = new Vue({
         }
     };
 }
-
 mainNavigation("menu", "section");
-
     </script>
 </body>
 </html>

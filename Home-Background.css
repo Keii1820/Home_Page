@@ -90,11 +90,11 @@ body {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    background-color: #db2512;
+    background-color: transparent;
     transition: background-color 0.2s ease;
     cursor: pointer;
     outline: 0;
@@ -102,6 +102,13 @@ body {
     border-radius: 5%;
     text-transform: uppercase;
   }
+
+  .btn:hover {
+    color: white;
+    transform: scale(1.5);
+    transition: transform 0.2s;
+}
+
   .block-title.text-white {
     color: #fff;
   }

@@ -1,4 +1,12 @@
 
+.nav-link-hover {
+    transition: transform .3s; /* Add a transition effect */
+  }
+  
+  .nav-link-hover:hover {
+    transform: scale(1.1); /* Enlarge the link by 10% when hovered */
+  }
+
 html, body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
@@ -135,11 +143,11 @@ section {
 	}
 }
 
-
+ 
 /*  ******* Header + Navigation ******* */
 
 .navbar {
-	background-color: #182c39;
+	background-color: darkslategrey ;
     border-color: rgb(51, 17, 0);
 	border-color: rgba(51, 17, 0, 0.2);
 	font-weight: 700;
@@ -196,16 +204,15 @@ section {
 }
 
 .jumbotron {
-	margin-bottom: 0px;
-    background-image: url('https://res.cloudinary.com/dbte0ueti/image/upload/v1536951689/new/jumbotron.jpg');
-    background-position: 0% 25%;
+	margin-bottom: 0 px;
+    background-image: url('https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8');
+    background-position: 0px 26px;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     text-shadow: black 0.3em 0.3em 0.3em;
     height: 700px;
 }
-
 
 .jumbotron .header-content-inner {
 	font-weight: 700;
@@ -478,135 +485,6 @@ p.first::first-letter {
 	border-color: #ffc266;
 	transition: border-color 2s;
 }
-
-
-
-
-/* ******* Gallery ******* */
-
-
-#gallery h3 {
-	font-family: 'Lato', sans-serif;
-	text-transform: none;
-	color: #182c39;
-	margin: 50px auto 10px auto;
-	font-weight: 700;
-}
-
-#gallery .gallery {
-	margin: 0px 80px;
-}
-
-#gallery .no-gutter > [class*="col-"] {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-#gallery .caption-content {	
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8); 
-    color: #f1f1f1;
-	overflow: hidden;
-	width: 100%;
-	height: 0;
-	transition: .5s ease;
-}
-
-#gallery .portfolio-item:hover .caption-content {
-	bottom: 0;
-	height: 100%;
-}
-
-#gallery .caption-content .fa {
-	white-space: nowrap;
-	color: white;
-	font-size: 40px;
-	position: absolute;
-	overflow: hidden;
-	top: 50%;
-	left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	
-}
-
-#gallery .more-img {
-	margin: 0 80px;
-	background-color: #182c39;
-}
-
-#gallery .more-img .to-gallery {
-	text-align: center;
-	text-transform: none;
-	color: #fff;
-	padding: 10px;
-	margin: 0px auto;
-}
-
-#gallery .more-img .to-gallery h4 {
-	text-transform: none;
-	color: #fff;
-	padding: 5px;
-	margin: auto;
-	font-size: 16px;
-}
-
-#gallery .more-img .social-networks .fa {
-	font-size: 20px;
-	margin: 5px 5px;
-	color: #fff;
-}
-
-#gallery .more-img .social-networks .fa:hover {
-	color: #ffc266;
-}
-
-
-
-/* ******* Our staff ******* */
-
-
-
-#staff .thumbnail-row {
-	margin: auto 60px;
-}
-
-#staff h3 {
-	font-family: 'Lato', sans-serif;
-	text-transform: none;
-	color: #182c39;
-	margin: 50px auto 10px auto;
-}
-
-#staff img {
-	border-radius: 50%;
-	margin-bottom: 10px;
-}
-
-
-#staff  h5 {
-	color: #222;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
-}
-
-#staff  h6 {
-	color: #555;
-	font-size: 16px;
-}
-
-#staff img:hover {
-	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.9);
-	transition: .3s;
-}
-
-
 
 /* ******* Testimonials ******* */
 #testimonials .hr-testimonials {
