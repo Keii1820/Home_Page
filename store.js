@@ -1,4 +1,4 @@
-    <script>
+
         let cart = [];
         const cartButton = document.getElementById('cart-button');
         const cartContainer = document.getElementById('cart-container');
@@ -55,4 +55,4 @@
                 });
             });
         });
-    </script>
+
